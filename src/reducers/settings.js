@@ -10,7 +10,7 @@ const InitialState = {
 	// flow: '',
 };
 
-export default function(state = InitialState, action) {
+export default function (state = InitialState, action) {
 	switch (action.type) {
 		case 'modify_settings':
 			if (action.payload.bg) {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableWithoutFeedback, Slider, Dimensions } from 'react-native';
+import { View, Text, TouchableWithoutFeedback, Dimensions } from 'react-native';
+import Slider from '@react-native-community/slider';
 import { connect } from 'react-redux';
 import Icon from './Icon';
 
