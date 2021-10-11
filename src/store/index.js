@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer, createMigrate } from 'redux-persist';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import reducers from '../reducers';
 
 const migrations = {

@@ -4,16 +4,26 @@ import androidx.multidex.MultiDexApplication;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
+import net.no_mad.tts.TextToSpeechPackage;
+import cl.json.RNSharePackage;
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.reactnativecommunity.netinfo.NetInfoPackage;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+import com.futurepress.staticserver.FPStaticServerPackage;
 import net.no_mad.tts.TextToSpeechPackage;
 import com.rnfs.RNFSPackage;
 import com.futurepress.staticserver.FPStaticServerPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JSIModulePackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import android.webkit.WebView;
+import com.swmansion.reanimated.ReanimatedJSIModulePackage;
 
 public class MainApplication extends MultiDexApplication implements ReactApplication {
 
@@ -36,6 +46,11 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
         @Override
         protected String getJSMainModuleName() {
           return "index";
+        }
+
+        @Override
+        protected JSIModulePackage getJSIModulePackage() {
+          return new ReanimatedJSIModulePackage();
         }
       };
 

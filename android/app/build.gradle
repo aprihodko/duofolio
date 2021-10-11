@@ -138,7 +138,7 @@ android {
         applicationId "com.duofolio"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
+        versionCode 4
         versionName "1.1"
         multiDexEnabled true
     }
@@ -186,6 +186,8 @@ android {
         pickFirst "lib/x86_64/libc++_shared.so"
     }
 
+    sourceSets { main { assets.srcDirs = ['src/main/assets', '../../assets'] } }
+
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
@@ -203,6 +205,16 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-vector-icons')
+    implementation project(':react-native-tts')
+    implementation project(':react-native-share')
+    implementation project(':react-native-safe-area-context')
+    implementation project(':react-native-reanimated')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':@react-native-community_netinfo')
+    implementation project(':@react-native-community_masked-view')
+    implementation project(':react-native-static-server')
+    implementation project(':@react-native-community_async-storage')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules

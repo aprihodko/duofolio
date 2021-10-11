@@ -1,5 +1,7 @@
-import { ToastAndroid } from 'react-native';
+import { Platform, ToastAndroid } from 'react-native';
 
-export default function RenderToast(message) {
-	ToastAndroid.showWithGravityAndOffset(message, ToastAndroid.SHORT, ToastAndroid.BOTTOM, 0, 300);
+export default function RenderToast (message) {
+  Platform.OS === "android"
+    ? ToastAndroid.showWithGravityAndOffset(message, ToastAndroid.SHORT, ToastAndroid.BOTTOM, 0, 300)
+    : alert(message)
 }
